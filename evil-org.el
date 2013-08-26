@@ -57,24 +57,25 @@
 (evil-define-key 'normal evil-org-mode-map
   "gh" 'outline-up-heading
   "gj" (if (fboundp 'org-forward-same-level) ;to be backward compatible with older org version
-	   'org-forward-same-level
-	  'org-forward-heading-same-level)
+         'org-forward-same-level
+         'org-forward-heading-same-level)
   "gk" (if (fboundp 'org-backward-same-level)
-	   'org-backward-same-level
-	  'org-backward-heading-same-level)
+         'org-backward-same-level
+         'org-backward-heading-same-level)
   "gl" 'outline-next-visible-heading
   "t" 'org-todo
   "T" '(lambda () (interactive) (evil-org-eol-call '(org-insert-todo-heading nil)))
   "H" 'org-beginning-of-line
   "L" 'org-end-of-line
-  ";t" 'org-show-todo-tree
-  "o" '(lambda () (interactive) (evil-org-eol-call 'always-insert-item))
-  "O" '(lambda () (interactive) (evil-org-eol-call 'org-insert-heading))
+  ",t" 'org-show-todo-tree
+  "O" '(lambda () (interactive) (evil-org-eol-call 'always-insert-item))
+  "o" '(lambda () (interactive) (evil-org-eol-call 'org-insert-heading))
   "$" 'org-end-of-line
   "^" 'org-beginning-of-line
   "<" 'org-metaleft
   ">" 'org-metaright
-  ";a" 'org-agenda
+  ",a" 'org-archive-subtree
+  ",va" 'org-agenda
   "-" 'org-cycle-list-bullet
   (kbd "TAB") 'org-cycle)
 
